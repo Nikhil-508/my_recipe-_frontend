@@ -15,7 +15,7 @@ const CreateRecipe = () => {
 
 const handleChange = (event) => {
     const {name,value} = event.target
-    setRecipe({...recipe,[name]: value }) 
+    setRecipe({...recipe,[name] : value})
 }
 
 const navigate = useNavigate()
@@ -24,8 +24,7 @@ const handleSubmit = (event) =>{
     axios.post('http://localhost:3001/recipe/create-recipe',recipe)
     .then(result => {
       navigate('/')
-        console.log(result,"recipeeeee")
-        alert('recipe created successfully')
+        alert('Are you sure to add this recipe?')
     }).catch(error => console.log(error))
 }
 

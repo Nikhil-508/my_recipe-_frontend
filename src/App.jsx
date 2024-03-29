@@ -7,7 +7,9 @@ import Home from './Components/Home'
 import Nav from './Components/Nav'
 import CreateRecipe from './Components/CreateRecipe'
 import ReadRecipe from './Components/ReadRecipe'
-import SavedRecipe from './Components/SavedRecipe'
+import MyRecipe from './Components/MyRecipe'
+
+
 function App() {
 
   return (
@@ -18,8 +20,8 @@ function App() {
     <Route path='/auth/register' element={<Register/>}></Route>
     <Route path='/auth/login' element={<Login/>}></Route>
     <Route path='/recipe/create-recipe' element={<CreateRecipe/>}></Route>
-    <Route path='/recipe/saved-recipe' element={<SavedRecipe/>}></Route>
-    <Route path='/read-recipe:id' element={<ReadRecipe/>}></Route>
+    <Route path='/read-recipe/:id' element={<ReadRecipe/>}></Route>
+    <Route path='/recipe/my-recipe' element={<MyRecipe/>}></Route>
    </Routes>
    </BrowserRouter>
   )

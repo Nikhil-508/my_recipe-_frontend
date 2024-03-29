@@ -2,9 +2,11 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+
   const userId = window.localStorage.getItem('id');
   const navigate = useNavigate();
 
+  //User Logout function
   const handleLogout = () => {
     const confirmLogout = window.confirm("Are you sure you want to log out?");
     if (confirmLogout) {

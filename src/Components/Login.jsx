@@ -4,13 +4,13 @@ import axios from 'axios'
 import { Link,useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
 
     axios.defaults.withCredentials = true
-
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post("http://localhost:3001/auth/login",{username,password})
@@ -21,9 +21,7 @@ const Login = () => {
         .catch((error)=>{console.log(error)})
     }
 
-
-
-
+    
   return (
     <div className='d-flex justify-content-center align-items-center vh-100'>
       <div className='p-3 border-1 w-25'>

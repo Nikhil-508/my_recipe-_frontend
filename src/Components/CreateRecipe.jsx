@@ -19,6 +19,7 @@ const handleChange = (event) => {
 }
 
 const navigate = useNavigate()
+
 const handleSubmit = (event) =>{
     event.preventDefault()
     axios.post('http://localhost:3001/recipe/create-recipe',recipe)
@@ -27,6 +28,7 @@ const handleSubmit = (event) =>{
         alert('Are you sure to add this recipe?')
     }).catch(error => console.log(error))
 }
+
 
   return (
 

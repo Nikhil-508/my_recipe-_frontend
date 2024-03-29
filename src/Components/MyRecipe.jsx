@@ -7,16 +7,22 @@ import { useNavigate } from 'react-router-dom';
 
 
 const MyRecipe = () => {
+
   const navigate = useNavigate()
   const [recipe,setRecipe] = useState([])
+
   const id = window.localStorage.getItem('id')
   const url = `http://localhost:3001/recipe/my-recipe/${id}`;
+
   useEffect(()=>{
     axios.get(url)
     .then(result =>
        setRecipe(result.data))
     .catch(err => console.log(err))
   },[])
+
+  
+  //Recipe delete  function
 
   const handleDelete =  async (recipeId) => {
     const confirmDelete = window.confirm("Are you sure to delete this recipe?");

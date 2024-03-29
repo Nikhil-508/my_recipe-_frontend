@@ -4,13 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom'
 
 const ReadRecipe = () => {
+
   const {id} = useParams()
   const [recipe,setRecipe] = useState({})
-  // const getSingleRecipe = async () => {
-  //   try{
-  //   }
-  // }
+
   const url = `http://localhost:3001/recipe/read-recipe/${id}`;
+
   useEffect(()=>{
     console.log("readreciupeeeeee")
     axios.get(url)
@@ -18,11 +17,11 @@ const ReadRecipe = () => {
       console.log(result,"resultt")
       setRecipe(result?.data?.result)
     }).catch(err => console.log(err))
-
   },[id])
  
   return (
-<>
+    
+  <>
   {recipe && (
     <div className='container mt-3'>
       <div className='row'>

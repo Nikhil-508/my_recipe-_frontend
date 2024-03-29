@@ -5,14 +5,17 @@ import RecipeItem from './RecipeCard';
 
 
 const Home = () => {
+
   const [recipes,SetRecipes] = useState([])
+
   useEffect(()=>{
     axios.get('http://localhost:3001/recipe/recipes')
     .then(recipes => {
       SetRecipes(recipes.data)
-      console.log(recipes.data,"recipeeee")
     }).catch(err => console.log(err))
   },[])
+
+
   return (
     <div>
     <h2 className="text-center">New <span className="badge bg-danger my-2">Recipes</span></h2>

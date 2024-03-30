@@ -11,7 +11,6 @@ const ReadRecipe = () => {
   const url = `http://localhost:3001/recipe/read-recipe/${id}`;
 
   useEffect(()=>{
-    console.log("readreciupeeeeee")
     axios.get(url)
     .then(result => {
       console.log(result,"resultt")

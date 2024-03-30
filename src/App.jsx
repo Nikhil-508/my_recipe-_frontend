@@ -8,6 +8,7 @@ import Nav from './Components/Nav'
 import CreateRecipe from './Components/CreateRecipe'
 import ReadRecipe from './Components/ReadRecipe'
 import MyRecipe from './Components/MyRecipe'
+import EditRecipe from './Components/EditRecipe'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <Route path='/recipe/create-recipe' element={<CreateRecipe/>}></Route>
     <Route path='/read-recipe/:id' element={<ReadRecipe/>}></Route>
     <Route path='/recipe/my-recipe' element={<MyRecipe/>}></Route>
+    <Route path='/recipe/edit-recipe/:id' element={<EditRecipe/>}></Route>
    </Routes>
    </BrowserRouter>
   )

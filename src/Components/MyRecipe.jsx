@@ -21,6 +21,7 @@ const MyRecipe = () => {
     .catch(err => console.log(err))
   },[])
 
+
   
   //Recipe delete  function
 
@@ -37,6 +38,8 @@ const MyRecipe = () => {
         .catch(err => console.log(err));
     }
   };
+
+
   
   return (
     <div>
@@ -51,7 +54,9 @@ const MyRecipe = () => {
               <p className="card-text">{item.ingredients ? item.ingredients.slice(0, 90) : "More data about this recipe is not available right now"}</p>
               <p className="card-text">{item.instruction ? item.instruction.slice(0, 90) : "More data about this recipe is not available right now"}</p>
               <div>
-                <button className="btn btn-primary mr-2" onClick={() => handleEdit(item._id)}>Edit</button>
+                <Link to={`/recipe/edit-recipe/${item._id}`}>
+                <button className="btn btn-primary mr-2">Edit</button>
+                </Link>
                 <button className="btn btn-danger mx-2" onClick={() => handleDelete(item._id)}>Delete</button>
               </div>
             </div>
